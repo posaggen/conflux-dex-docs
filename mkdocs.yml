@@ -1,0 +1,9 @@
+site_name: Conflux DEX Documentation
+nav:
+    - Welcome to Conflux DEX: index.md
+    - MatchFlow:
+      - Introduction: matchflow/index.md
+      - WebSocket API: matchflow/ws.md
+      - EIP712 Signature: matchflow/eip712.md
+theme: readthedocs
+copyright: Copyright © 2020 Conflux. All Rights Reserved.
