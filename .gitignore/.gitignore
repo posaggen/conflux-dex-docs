@@ -1,0 +1,6 @@
+# mkdocs
+site
+
+#Mac OS
+.DS_Store
+**/.DS_Store
