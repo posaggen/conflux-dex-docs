@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>EIP712 Signature - Conflux DEX Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "EIP712 Signature";
+    var mkdocs_page_input_path = "matchflow\\eip712.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Welcome to Conflux DEX</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">MatchFlow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ws/">WebSocket API</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">EIP712 Signature</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#why-eip712">Why EIP712</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#eip712-domain">EIP712 Domain</a></li>
+        
+            <li><a class="toctree-l4" href="#place-order">Place Order</a></li>
+        
+            <li><a class="toctree-l4" href="#cancel-order">Cancel Order</a></li>
+        
+            <li><a class="toctree-l4" href="#withdraw">Withdraw</a></li>
+        
+            <li><a class="toctree-l4" href="#transfer">Transfer</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Conflux DEX Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>MatchFlow &raquo;</li>
+        
+      
+    
+    <li>EIP712 Signature</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="why-eip712">Why EIP712</h1>
+<p>To avoid transaction replay attack in different Conflux chains, <strong>Conflux DEX</strong> follow the way of <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md">EIP712</a> to sign requests from users, which will be validated in <strong>MatchFlow</strong> and <strong>BoomFlow</strong>.</p>
+<h2 id="eip712-domain">EIP712 Domain</h2>
+<p>Primary type: <code>EIP712Domain</code></p>
+<h3 id="boomflow-domain">Boomflow Domain</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td><code>Boomflow</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>chainId</td>
+<td>uint256</td>
+<td>0</td>
+</tr>
+<tr>
+<td>verifyingContract</td>
+<td>address</td>
+<td>REST API: <code>/common/boomflow</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="crcl-domain">CRCL Domain</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td><code>CRCL</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>chainId</td>
+<td>uint256</td>
+<td>0</td>
+</tr>
+<tr>
+<td>verifyingContract</td>
+<td>address</td>
+<td>REST API: <code>/currencies/${name}</code></td>
+</tr>
+</tbody>
+</table>
+<p>In the response of REST API <code>/currencies/${name}</code>, use <code>contractAddress</code> as CRCL contract address, while <code>tokenAddress</code> is the corresponding ERC777 contract address.</p>
+<h2 id="place-order">Place Order</h2>
+<p>Domain: <a href="#boomflow-domain">Boomflow Domain</a></p>
+<p>Primary type: <code>Order</code></p>
+<h3 id="schema">Schema</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userAddress</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>uint256</td>
+<td>big number in drip</td>
+</tr>
+<tr>
+<td>price</td>
+<td>uint256</td>
+<td>big number in drip</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>uint256</td>
+<td>limit order: 0, market order: 1</td>
+</tr>
+<tr>
+<td>side</td>
+<td>bool</td>
+<td>buy order: true, sell order: false</td>
+</tr>
+<tr>
+<td>salt</td>
+<td>uint256</td>
+<td>order timestamp</td>
+</tr>
+<tr>
+<td>baseAssetAddress</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>quoteAssetAddress</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>feeAddress</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>makerFeePercentage</td>
+<td>uint256</td>
+<td>big number in drip</td>
+</tr>
+<tr>
+<td>takerFeePercentage</td>
+<td>uint256</td>
+<td>big number in drip</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cancel-order">Cancel Order</h2>
+<p>Domain: <a href="#boomflow-domain">Boomflow Domain</a></p>
+<p>Primary type: <code>CancelRequest</code></p>
+<h3 id="schema_1">Schema</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order</td>
+<td><a href="#schema">order schema</a></td>
+<td>placed order</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>uint256</td>
+<td>order cancellation timestamp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="withdraw">Withdraw</h2>
+<p>Domain: <a href="#crcl-domain">CRCL Domain</a></p>
+<p>Primary type: <code>WithdrawRequest</code></p>
+<h3 id="schema_2">Schema</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userAddress</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>uint256</td>
+<td>big number in drip</td>
+</tr>
+<tr>
+<td>recipient</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>isCrosschain</td>
+<td>bool</td>
+<td></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>uint256</td>
+<td>withdraw timestamp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="transfer">Transfer</h2>
+<p>Domain: <a href="#crcl-domain">CRCL Domain</a></p>
+<p>Primary type: <code>TransferRequest</code></p>
+<h3 id="schema_3">Schema</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userAddress</td>
+<td>address</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>amounts</td>
+<td>uint256[]</td>
+<td>big number in drip</td>
+</tr>
+<tr>
+<td>recipients</td>
+<td>address[]</td>
+<td>HEX format</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>uint256</td>
+<td>transfer timestamp</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../ws/" class="btn btn-neutral" title="WebSocket API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright © 2020 Conflux. All Rights Reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ws/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
