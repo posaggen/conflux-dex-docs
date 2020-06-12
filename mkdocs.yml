@@ -5,5 +5,9 @@ nav:
       - Introduction: matchflow/index.md
       - WebSocket API: matchflow/ws.md
       - EIP712 Signature: matchflow/eip712.md
+    - ShuttleFlow:
+      - Introduction: shuttleflow/index.md
+      - JSON RPC: shuttleflow/json_rpc.md
+      - Conflux Crosschain SDK: shuttleflow/sdk.md
 theme: readthedocs
 copyright: Copyright © 2020 Conflux. All Rights Reserved.
