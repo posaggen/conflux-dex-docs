@@ -450,61 +450,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_get_system_timestamp">2.1. Get system timestamp</a></li>
 <li><a href="#_get_system_timezone_id">2.2. Get system timezone ID</a></li>
 <li><a href="#_get_boomflow_address">2.3. Get Boomflow address</a></li>
+<li><a href="#_get_chain_id">2.4. Get chain ID</a></li>
+<li><a href="#_get_fee_configuration">2.5. Get fee configuration</a></li>
 </ul>
 </li>
 <li><a href="#_currency_management">3. Currency management</a>
 <ul class="sectlevel2">
-<li><a href="#_add_currency">3.1. Add currency</a></li>
-<li><a href="#_get_currency">3.2. Get currency</a></li>
-<li><a href="#_get_currencies">3.3. Get currencies</a></li>
+<li><a href="#_get_currency">3.1. Get currency</a></li>
+<li><a href="#_get_currencies">3.2. Get currencies</a></li>
+<li><a href="#_get_cross_chain_tokens">3.3. Get cross-chain tokens</a></li>
 </ul>
 </li>
 <li><a href="#_market_data">4. Market data</a>
 <ul class="sectlevel2">
 <li><a href="#_get_last_trade">4.1. Get last trade</a></li>
-<li><a href="#_get_last_closing_price">4.2. Get last closing price</a></li>
-<li><a href="#_get_trades">4.3. Get trades</a></li>
-<li><a href="#_get_ticks">4.4. Get ticks</a></li>
-<li><a href="#_get_merged_tick">4.5. Get merged tick</a></li>
-<li><a href="#_batch_get_merged_ticks">4.6. Batch get merged ticks</a></li>
-<li><a href="#_get_depth">4.7. Get depth</a></li>
+<li><a href="#_get_last_closing_price_with_time">4.2. Get last closing price with time</a></li>
+<li><a href="#_get_last_closing_price">4.3. Get last closing price</a></li>
+<li><a href="#_get_trades">4.4. Get trades</a></li>
+<li><a href="#_get_ticks">4.5. Get ticks</a></li>
+<li><a href="#_get_merged_tick">4.6. Get merged tick</a></li>
+<li><a href="#_batch_get_merged_ticks">4.7. Batch get merged ticks</a></li>
+<li><a href="#_get_depth">4.8. Get depth</a></li>
 </ul>
 </li>
 <li><a href="#_order_api">5. Order API</a>
 <ul class="sectlevel2">
 <li><a href="#_place_order">5.1. Place order</a></li>
-<li><a href="#_cancel_order">5.2. Cancel order</a></li>
-<li><a href="#_cancel_order_by_client_order_id">5.3. Cancel order by client order ID</a></li>
-<li><a href="#_get_order">5.4. Get order</a></li>
-<li><a href="#_get_order_by_client_order_id">5.5. Get order by client order ID</a></li>
-<li><a href="#_get_order_cancellation_details">5.6. Get order cancellation details</a></li>
-<li><a href="#_get_opened_orders">5.7. Get opened orders</a></li>
-<li><a href="#_get_incompleted_orders">5.8. Get incompleted orders</a></li>
-<li><a href="#_get_completed_orders">5.9. Get completed orders</a></li>
-<li><a href="#_get_orders">5.10. Get orders</a></li>
-<li><a href="#_get_order_trades">5.11. Get order trades</a></li>
-<li><a href="#_get_trades_2">5.12. Get trades</a></li>
+<li><a href="#_place_order_test">5.2. Place order test</a></li>
+<li><a href="#_cancel_order">5.3. Cancel order</a></li>
+<li><a href="#_cancel_order_by_client_order_id">5.4. Cancel order by client order ID</a></li>
+<li><a href="#_get_order">5.5. Get order</a></li>
+<li><a href="#_get_order_by_client_order_id">5.6. Get order by client order ID</a></li>
+<li><a href="#_get_order_cancellation_details">5.7. Get order cancellation details</a></li>
+<li><a href="#_get_opened_orders">5.8. Get opened orders</a></li>
+<li><a href="#_get_incompleted_orders">5.9. Get incompleted orders</a></li>
+<li><a href="#_get_completed_orders">5.10. Get completed orders</a></li>
+<li><a href="#_get_orders">5.11. Get orders</a></li>
+<li><a href="#_get_order_trades">5.12. Get order trades</a></li>
+<li><a href="#_get_trades_2">5.13. Get trades</a></li>
 </ul>
 </li>
 <li><a href="#_product_management">6. Product management</a>
 <ul class="sectlevel2">
-<li><a href="#_add_product">6.1. Add product</a></li>
-<li><a href="#_add_instant_exchange_product">6.2. Add instant exchange product</a></li>
-<li><a href="#_add_daily_limit_for_a_product">6.3. Add daily limit for a product</a></li>
-<li><a href="#_add_or_update_daily_limit_rate_for_a_product">6.4. Add or update daily limit rate for a product</a></li>
-<li><a href="#_get_product">6.5. Get product</a></li>
-<li><a href="#_get_products">6.6. Get products</a></li>
-<li><a href="#_get_daily_limit">6.7. Get daily limit</a></li>
-<li><a href="#_get_daily_limit_rate">6.8. Get daily limit rate</a></li>
+<li><a href="#_get_product">6.1. Get product</a></li>
+<li><a href="#_get_products">6.2. Get products</a></li>
+<li><a href="#_get_daily_limit">6.3. Get daily limit</a></li>
+<li><a href="#_get_daily_limit_rate">6.4. Get daily limit rate</a></li>
 </ul>
 </li>
 <li><a href="#_system_management">7. System management</a>
 <ul class="sectlevel2">
-<li><a href="#_suspend">7.1. Suspend</a></li>
-<li><a href="#_check_system_suspended">7.2. Check system suspended</a></li>
-<li><a href="#_resume">7.3. Resume</a></li>
-<li><a href="#_cancel_orders">7.4. Cancel orders</a></li>
-<li><a href="#_update_administrator_account">7.5. Update administrator account</a></li>
+<li><a href="#_check_system_suspended">7.1. Check system suspended</a></li>
+<li><a href="#_get_recent_errors">7.2. Get recent errors</a></li>
 </ul>
 </li>
 <li><a href="#_user_management">8. User management</a>
@@ -1149,7 +1146,9 @@ Content-Type: application/json
   "currency" : "",
   "amount" : 0,
   "recipient" : "",
-  "crossChain" : 0,
+  "burn" : 0,
+  "relayContract" : "",
+  "fee" : 0,
   "timestamp" : 0,
   "signature" : ""
 }</code></pre>
@@ -1185,28 +1184,48 @@ Content-Type: application/json
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency to withdraw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Currency to withdraw.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">amount</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of currency to withdraw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of currency to withdraw.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">recipient</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The destination address to withdraw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The destination address to withdraw.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">crossChain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">burn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to withdraw currency to the original chain.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to burn tokens after withdrawal to ERC777 contract. If false, withdraw tokens to
+ERC777 contract on Conflux. If true, different tokens have different behaviors as following:
+1) For cross-chain tokens, e.g. cETH, cBTC, withdraw back to the original blockchain.
+2) For CFX tokens, withdraw back to CFX account on Conflux.
+3) Otherwise, burn should be false.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relayContract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional relay contract address to withdraw. E.g. Withdraw ETH/USDT to any defi contract on Ethereum.
+For assets on Conflux chain, it could be null or empty.
+For cross chain assets, use zero address 0x0000...0000 (of length 42 with 0x prefix) if not required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected withdrawal fee.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
@@ -1220,7 +1239,7 @@ Content-Type: application/json
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of the withdraw request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of the withdraw request.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1309,7 +1328,9 @@ Content-Type: application/json
     "currency" : "",
     "amount" : "BigDecimal.ZERO",
     "destination" : "",
-    "crossChain" : 0,
+    "burn" : 0,
+    "relayContract" : "",
+    "fee" : "BigDecimal.ZERO",
     "timestamp" : 0,
     "hash" : "",
     "signature" : "",
@@ -1397,11 +1418,25 @@ Content-Type: application/json
 <td class="tableblock halign-left valign-top"><p class="tableblock">Destination address to withdraw.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].crossChain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].burn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to withdraw currency to the original chain.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to burn tokens after withdrawal to ERC777 contract.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].relayContract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional relay contract address to withdraw. E.g. Withdraw ETH/USDT to any defi contract on Ethereum.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].fee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal.ZERO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected withdrawal fee.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">items.[].timestamp</p></td>
@@ -1539,7 +1574,9 @@ Content-Type: application/json
     "currency" : "",
     "amount" : "BigDecimal.ZERO",
     "destination" : "",
-    "crossChain" : 0,
+    "burn" : 0,
+    "relayContract" : "",
+    "fee" : "BigDecimal.ZERO",
     "timestamp" : 0,
     "hash" : "",
     "signature" : "",
@@ -1627,11 +1664,25 @@ Content-Type: application/json
 <td class="tableblock halign-left valign-top"><p class="tableblock">Destination address to withdraw.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].crossChain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].burn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to withdraw currency to the original chain.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to burn tokens after withdrawal to ERC777 contract.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].relayContract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional relay contract address to withdraw. E.g. Withdraw ETH/USDT to any defi contract on Ethereum.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items.[].fee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal.ZERO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected withdrawal fee.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">items.[].timestamp</p></td>
@@ -2263,130 +2314,41 @@ Key is recipient address, and value is transfer amount.</p></td>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_currency_management">3. Currency management</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_add_currency">3.1. Add currency</h3>
+<h3 id="_get_chain_id">2.4. Get chain ID</h3>
 <div class="paragraph">
-<p>Create a new currency. Note, administrator privilege is required.</p>
+<p>Get the chain ID of Conflux network used by DEX.</p>
 </div>
 <div class="paragraph">
 <p>请求</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /currencies HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "currency" : {
-    "id" : 0,
-    "name" : "",
-    "contractAddress" : "",
-    "tokenAddress" : "",
-    "decimalDigits" : 0,
-    "crossChain" : 0,
-    "minimumWithdrawAmount" : 0
-  }
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /common/chainid HTTP/1.1</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New currency to create.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency id. (auto-generated)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=1,max=32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency name.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.contractAddress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=42,max=42)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CRCL contract address.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.tokenAddress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=42,max=42)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC777 contract address.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.decimalDigits</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency decimal digits</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.crossChain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True to indicate a cross chain currency,
-which is allowed to withdraw to the original chain.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency.minimumWithdrawAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum withdraw amount.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>响应</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_fee_configuration">2.5. Get fee configuration</h3>
+<div class="paragraph">
+<p>Get the fee configuration of DEX that used for trade settlement.</p>
+</div>
+<div class="paragraph">
+<p>请求</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /common/fee HTTP/1.1</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>响应</p>
 </div>
@@ -2395,13 +2357,10 @@ which is allowed to withdraw to the original chain.</p></td>
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "id" : 0,
-  "name" : "",
-  "contractAddress" : "",
-  "tokenAddress" : "",
-  "decimalDigits" : 0,
-  "crossChain" : 0,
-  "minimumWithdrawAmount" : 0
+  "takerFeeRate" : "BigDecimal.ZERO",
+  "makerFeeRate" : "BigDecimal.ZERO",
+  "strategy" : "FeeStrategy.ForFree",
+  "feeRecipient" : ""
 }</code></pre>
 </div>
 </div>
@@ -2424,60 +2383,43 @@ which is allowed to withdraw to the original chain.</p></td>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency id. (auto-generated)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=1,max=32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency name.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">contractAddress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=42,max=42)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CRCL contract address.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tokenAddress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=42,max=42)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC777 contract address.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">decimalDigits</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency decimal digits</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">crossChain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True to indicate a cross chain currency,
-which is allowed to withdraw to the original chain.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimumWithdrawAmount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">takerFeeRate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum withdraw amount.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal.ZERO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fee rate for taker order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">makerFeeRate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal.ZERO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fee rate for maker order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">strategy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FeeStrategy</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FeeStrategy.ForFree</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fee strategy: ForFree, FeeToDex or FeeToMaker.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feeRecipient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fee recipient for strategy FeeToDex.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_currency_management">3. Currency management</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_get_currency">3.2. Get currency</h3>
+<h3 id="_get_currency">3.1. Get currency</h3>
 <div class="paragraph">
 <p>Get currency of specified currency name or id.</p>
 </div>
@@ -2606,7 +2548,7 @@ which is allowed to withdraw to the original chain.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_currencies">3.3. Get currencies</h3>
+<h3 id="_get_currencies">3.2. Get currencies</h3>
 <div class="paragraph">
 <p>List currencies that ordered by name.</p>
 </div>
@@ -2750,6 +2692,88 @@ which is allowed to withdraw to the original chain.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">items.[].minimumWithdrawAmount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum withdraw amount.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_get_cross_chain_tokens">3.3. Get cross-chain tokens</h3>
+<div class="paragraph">
+<p>请求</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /currencies/crosschain/tokens HTTP/1.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>响应</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
+
+[ {
+  "address" : "",
+  "name" : "",
+  "decimals" : 0,
+  "withdrawFee" : 0,
+  "minWithdrawAmount" : 0
+} ]</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">校验</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[].address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token (ERC777) address on Conflux.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[].name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token name, e.g. btc, eth or ERC20 token address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[].decimals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token decimals in original chain, e.g. BTC(8), USDT(6).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[].withdrawFee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Withdraw fee to sponsor.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[].minWithdrawAmount</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
@@ -2952,9 +2976,51 @@ For "Sell" order, it is quote currency.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_last_closing_price">4.2. Get last closing price</h3>
+<h3 id="_get_last_closing_price_with_time">4.2. Get last closing price with time</h3>
 <div class="paragraph">
-<p>Get the latest closing price of specified product name.</p>
+<p>Provide time to client with last closing price.</p>
+</div>
+<div class="paragraph">
+<p>请求</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /market/trades/last-closing-price?product= HTTP/1.1</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">校验</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_get_last_closing_price">4.3. Get last closing price</h3>
+<div class="paragraph">
+<p>Get the latest closing price of specified product name.<br>
+Deprecated, use '/trades/last-closing-price' instead.</p>
 </div>
 <div class="paragraph">
 <p>请求</p>
@@ -3001,7 +3067,7 @@ For "Sell" order, it is quote currency.</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_get_trades">4.3. Get trades</h3>
+<h3 id="_get_trades">4.4. Get trades</h3>
 <div class="paragraph">
 <p>List trades of specified product in time descending order.</p>
 </div>
@@ -3196,7 +3262,7 @@ For "Sell" order, it is quote currency.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_ticks">4.4. Get ticks</h3>
+<h3 id="_get_ticks">4.5. Get ticks</h3>
 <div class="paragraph">
 <p>List ticks of specified granularity.</p>
 </div>
@@ -3370,7 +3436,7 @@ For "Sell" order, it is quote currency.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tick creation timestamp.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tick creation timestamp, truncated.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[].updateTime</p></td>
@@ -3383,7 +3449,7 @@ For "Sell" order, it is quote currency.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_merged_tick">4.5. Get merged tick</h3>
+<h3 id="_get_merged_tick">4.6. Get merged tick</h3>
 <div class="paragraph">
 <p>Get the merged tick in the last 24 hours for specified product.</p>
 </div>
@@ -3536,7 +3602,7 @@ For "Sell" order, it is quote currency.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tick creation timestamp.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tick creation timestamp, truncated.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">updateTime</p></td>
@@ -3549,7 +3615,7 @@ For "Sell" order, it is quote currency.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_batch_get_merged_ticks">4.6. Batch get merged ticks</h3>
+<h3 id="_batch_get_merged_ticks">4.7. Batch get merged ticks</h3>
 <div class="paragraph">
 <p>Get the merged ticks in the last 24 hours for specified products in batch.</p>
 </div>
@@ -3586,7 +3652,7 @@ For "Sell" order, it is quote currency.</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_get_depth">4.7. Get depth</h3>
+<h3 id="_get_depth">4.8. Get depth</h3>
 <div class="paragraph">
 <p>Get the price aggregated depth for the specified product.</p>
 </div>
@@ -3789,7 +3855,188 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cancel_order">5.2. Cancel order</h3>
+<h3 id="_place_order_test">5.2. Place order test</h3>
+<div class="paragraph">
+<p>Test the EIP712 message of place order request.</p>
+</div>
+<div class="paragraph">
+<p>请求</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /orders/place/test HTTP/1.1
+Content-Type: application/json
+
+{
+  "clientOrderId" : "",
+  "address" : "",
+  "product" : "",
+  "type" : "",
+  "side" : "",
+  "price" : 0,
+  "amount" : 0,
+  "feeAddress" : "",
+  "feeRateTaker" : 0,
+  "feeRateMaker" : 0,
+  "timestamp" : 0,
+  "signature" : ""
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">校验</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clientOrderId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max(64)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional client defined order identity, which is unique for a user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrderType</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order type: "Limit", "Market".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">side</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrderSide</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order side: "Buy", "Sell".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order price for "Limit" order type only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">amount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order amount for "Limit" order type or "Market-Sell" order.
+For "Market-Buy" order, it is the total order value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feeAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address to earn the trade fee.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feeRateTaker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trade fee rate for trade as taker (e.g. 0.01 means 1%), precision is 6.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feeRateMaker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trade fee rate for trade as maker (e.g. 0.01 means 1%), precision is 6.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order signature.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>响应</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
+
+{
+  "hash" : ""
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">校验</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EIP712 message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EIP712 message hash.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_cancel_order">5.3. Cancel order</h3>
 <div class="paragraph">
 <p>Submit a request to cancel an order.</p>
 </div>
@@ -3850,7 +4097,7 @@ Content-Type: application/json
 </table>
 </div>
 <div class="sect2">
-<h3 id="_cancel_order_by_client_order_id">5.3. Cancel order by client order ID</h3>
+<h3 id="_cancel_order_by_client_order_id">5.4. Cancel order by client order ID</h3>
 <div class="paragraph">
 <p>Submit a request to cancel an order by client order ID.</p>
 </div>
@@ -3918,7 +4165,7 @@ Content-Type: application/json
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_order">5.4. Get order</h3>
+<h3 id="_get_order">5.5. Get order</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
@@ -4138,7 +4385,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_order_by_client_order_id">5.5. Get order by client order ID</h3>
+<h3 id="_get_order_by_client_order_id">5.6. Get order by client order ID</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
@@ -4365,7 +4612,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_order_cancellation_details">5.6. Get order cancellation details</h3>
+<h3 id="_get_order_cancellation_details">5.7. Get order cancellation details</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
@@ -4514,7 +4761,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_opened_orders">5.7. Get opened orders</h3>
+<h3 id="_get_opened_orders">5.8. Get opened orders</h3>
 <div class="paragraph">
 <p>Get user opened orders of specified product or all products.</p>
 </div>
@@ -4765,7 +5012,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_incompleted_orders">5.8. Get incompleted orders</h3>
+<h3 id="_get_incompleted_orders">5.9. Get incompleted orders</h3>
 <div class="paragraph">
 <p>Get user incompleted orders of specified product or all products, including new submitted,<br>
 opened, pending and canceling orders.</p>
@@ -5024,7 +5271,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_completed_orders">5.9. Get completed orders</h3>
+<h3 id="_get_completed_orders">5.10. Get completed orders</h3>
 <div class="paragraph">
 <p>Get user completed (filled or cancelled) orders of specified product or all products.</p>
 </div>
@@ -5313,7 +5560,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_orders">5.10. Get orders</h3>
+<h3 id="_get_orders">5.11. Get orders</h3>
 <div class="paragraph">
 <p>Get user orders of specified product or all products.</p>
 </div>
@@ -5578,7 +5825,7 @@ For "Market-Buy" order, it is the total order value.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_order_trades">5.11. Get order trades</h3>
+<h3 id="_get_order_trades">5.12. Get order trades</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
@@ -5777,7 +6024,7 @@ For "Sell" order, it is quote currency.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_trades_2">5.12. Get trades</h3>
+<h3 id="_get_trades_2">5.13. Get trades</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
@@ -6009,34 +6256,16 @@ For "Sell" order, it is quote currency.</p></td>
 <h2 id="_product_management">6. Product management</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_add_product">6.1. Add product</h3>
+<h3 id="_get_product">6.1. Get product</h3>
 <div class="paragraph">
-<p>Create a new product. Note, administrator privilege is required.</p>
+<p>Get product of specified product name or id.</p>
 </div>
 <div class="paragraph">
 <p>请求</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /products HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "product" : {
-    "id" : 0,
-    "name" : "",
-    "baseCurrencyId" : 0,
-    "quoteCurrencyId" : 0,
-    "pricePrecision" : 0,
-    "amountPrecision" : 0,
-    "fundsPrecision" : 0,
-    "minOrderAmount" : 0,
-    "maxOrderAmount" : 0,
-    "minOrderFunds" : 0
-  }
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /products/{nameOrId}? HTTP/1.1</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -6058,95 +6287,11 @@ Content-Type: application/json
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nameOrId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New product to create.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product id. (auto-generated)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=1,max=32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product name. (e.g. BTC-USDT)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.baseCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced base currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.quoteCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced quote currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.pricePrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote price (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.amountPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Base currency precision when quote amount (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.fundsPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote funds for market-buy orders (funds = price * amount).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.minOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.maxOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.minOrderFunds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order funds. (For limit orders, funds = order.price * order.amount; for market-buy orders, funds = order.amount)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product name or id.</p></td>
 </tr>
 </tbody>
 </table>
@@ -6263,609 +6408,7 @@ Content-Type: application/json
 </table>
 </div>
 <div class="sect2">
-<h3 id="_add_instant_exchange_product">6.2. Add instant exchange product</h3>
-<div class="paragraph">
-<p>Create a new instant exchange product. Note, administrator privilege is required.</p>
-</div>
-<div class="paragraph">
-<p>请求</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /products/instantExchange HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "product" : {
-    "id" : 0,
-    "name" : "",
-    "baseCurrencyId" : 0,
-    "quoteCurrencyId" : 0,
-    "pricePrecision" : 0,
-    "amountPrecision" : 0,
-    "fundsPrecision" : 0,
-    "minOrderAmount" : 0,
-    "maxOrderAmount" : 0,
-    "minOrderFunds" : 0,
-    "baseProductId" : 0,
-    "baseIsBaseSide" : 0,
-    "quoteProductId" : 0,
-    "quoteIsBaseSide" : 0
-  }
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">InstantExchangeProduct</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New product to create.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product id. (auto-generated)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=1,max=32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product name. (e.g. BTC-USDT)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.baseCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced base currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.quoteCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced quote currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.pricePrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote price (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.amountPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Base currency precision when quote amount (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.fundsPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote funds for market-buy orders (funds = price * amount).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.minOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.maxOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.minOrderFunds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order funds. (For limit orders, funds = order.price * order.amount; for market-buy orders, funds = order.amount)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.baseProductId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product id of base currency instant exchange.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.baseIsBaseSide</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">if base currency in baseProductId is base.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.quoteProductId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product id of quote currency instant exchange.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product.quoteIsBaseSide</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">if quote currency in baseProductId is base.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>响应</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
-
-{
-  "id" : 0,
-  "name" : "",
-  "baseCurrencyId" : 0,
-  "quoteCurrencyId" : 0,
-  "pricePrecision" : 0,
-  "amountPrecision" : 0,
-  "fundsPrecision" : 0,
-  "minOrderAmount" : 0,
-  "maxOrderAmount" : 0,
-  "minOrderFunds" : 0
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product id. (auto-generated)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=1,max=32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product name. (e.g. BTC-USDT)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">baseCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced base currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">quoteCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced quote currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pricePrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote price (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">amountPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Base currency precision when quote amount (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fundsPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote funds for market-buy orders (funds = price * amount).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maxOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minOrderFunds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order funds. (For limit orders, funds = order.price * order.amount; for market-buy orders, funds = order.amount)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_add_daily_limit_for_a_product">6.3. Add daily limit for a product</h3>
-<div class="paragraph">
-<p>Create a new daily limit for a product. Note, administrator privilege is required.</p>
-</div>
-<div class="paragraph">
-<p>请求</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /products/dailyLimit HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "productId" : 0,
-  "startTime" : "",
-  "endTime" : ""
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">productId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">start time. "HH:MM:SS", e.g. "09:00:00"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">end time. "HH:MM:SS", e.g. "23:00:00"</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_add_or_update_daily_limit_rate_for_a_product">6.4. Add or update daily limit rate for a product</h3>
-<div class="paragraph">
-<p>Add or update daily limit rate for a product. Note, administrator privilege is required.</p>
-</div>
-<div class="paragraph">
-<p>请求</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /products/dailyLimitRate HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "productId" : 0,
-  "upperLimitRate" : 0,
-  "lowerLimitRate" : 0,
-  "initialPrice" : 0
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">productId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">upperLimitRate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Limit rate of price upper bound.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lowerLimitRate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Limit rate of price lower bound.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">initialPrice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Initial price of product.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_get_product">6.5. Get product</h3>
-<div class="paragraph">
-<p>Get product of specified product name.</p>
-</div>
-<div class="paragraph">
-<p>请求</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /products/{name}? HTTP/1.1</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product name.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>响应</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
-
-{
-  "id" : 0,
-  "name" : "",
-  "baseCurrencyId" : 0,
-  "quoteCurrencyId" : 0,
-  "pricePrecision" : 0,
-  "amountPrecision" : 0,
-  "fundsPrecision" : 0,
-  "minOrderAmount" : 0,
-  "maxOrderAmount" : 0,
-  "minOrderFunds" : 0
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product id. (auto-generated)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size(min=1,max=32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product name. (e.g. BTC-USDT)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">baseCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced base currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">quoteCurrencyId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referenced quote currency id.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pricePrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote price (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">amountPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Base currency precision when quote amount (decimal places).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fundsPrecision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quote currency precision when quote funds for market-buy orders (funds = price * amount).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maxOrderAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum order amount for limit orders or market-sell orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minOrderFunds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigDecimal</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order funds. (For limit orders, funds = order.price * order.amount; for market-buy orders, funds = order.amount)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_get_products">6.6. Get products</h3>
+<h3 id="_get_products">6.2. Get products</h3>
 <div class="paragraph">
 <p>List products that ordered by name.</p>
 </div>
@@ -7041,7 +6584,7 @@ Content-Type: application/json
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_daily_limit">6.7. Get daily limit</h3>
+<h3 id="_get_daily_limit">6.3. Get daily limit</h3>
 <div class="paragraph">
 <p>List daily limit of specified product name.</p>
 </div>
@@ -7143,7 +6686,7 @@ Content-Type: application/json
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_daily_limit_rate">6.8. Get daily limit rate</h3>
+<h3 id="_get_daily_limit_rate">6.4. Get daily limit rate</h3>
 <div class="paragraph">
 <p>Get daily limit rate of specified product name.</p>
 </div>
@@ -7255,77 +6798,7 @@ Content-Type: application/json
 <p>System maintenance APIs for administrator only.</p>
 </div>
 <div class="sect2">
-<h3 id="_suspend">7.1. Suspend</h3>
-<div class="paragraph">
-<p>Suspend system to refuse signature related operations for maintenance.</p>
-</div>
-<div class="paragraph">
-<p>请求</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /system/suspend HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "command" : "",
-  "comment" : ""
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System command to execute.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">comment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional comment.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_check_system_suspended">7.2. Check system suspended</h3>
+<h3 id="_check_system_suspended">7.1. Check system suspended</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
@@ -7344,227 +6817,25 @@ Content-Type: application/json
 </div>
 </div>
 <div class="sect2">
-<h3 id="_resume">7.3. Resume</h3>
-<div class="paragraph">
-<p>Resume system to accept signature related operations after maintenance.</p>
-</div>
+<h3 id="_get_recent_errors">7.2. Get recent errors</h3>
 <div class="paragraph">
 <p>请求</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /system/resume HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "command" : "",
-  "comment" : ""
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">GET /system/get-recent-errors HTTP/1.1</code></pre>
 </div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System command to execute.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">comment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional comment.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_cancel_orders">7.4. Cancel orders</h3>
-<div class="paragraph">
-<p>Cancel opening orders for maintenance.</p>
 </div>
 <div class="paragraph">
-<p>请求</p>
+<p>响应</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /system/orders/cancel HTTP/1.1
-Content-Type: application/json
+<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "userAddress" : "",
-  "product" : ""
-}</code></pre>
+[ "" ]</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">userAddress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User address to cancel orders, empty for all users.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product name to cancel orders, empty for all products.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_update_administrator_account">7.5. Update administrator account</h3>
-<div class="paragraph">
-<p>请求</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">POST /system/admin HTTP/1.1
-Content-Type: application/json
-
-{
-  "timestamp" : "System.currentTimeMillis()",
-  "signature" : "",
-  "nonce" : 0,
-  "gasPrice" : 0,
-  "gasLimit" : 0,
-  "storageLimit" : 0
-}</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">校验</th>
-<th class="tableblock halign-left valign-top">默认</th>
-<th class="tableblock halign-left valign-top">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System.currentTimeMillis()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UNIX time in milliseconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signature of administrator.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nonce</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigInteger</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator account nonce.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gasPrice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigInteger</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default gas price of administrator account.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gasLimit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigInteger</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default gas limit of administrator account.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">storageLimit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BigInteger</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage limit of administrator account.</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
