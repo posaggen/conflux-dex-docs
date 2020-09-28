@@ -63,7 +63,7 @@ mapping(string => uint256) public burn_fee;
 ```
 The fee taken from user during cToken burn. Note the decimals is decimals of the reference token.
 
-For example, the sponsor want to take 0.1 cUSDT when user burn cUSDT, here burn_fee['usdt'] should be 0.1 * 1e8.
+For example, the sponsor want to take 0.1 cUSDT when user burn cUSDT, here burn_fee['usdt'] should be 0.1 * 1e6.
 ```solidity
 mapping(string => uint256) public mint_fee;
 ```
@@ -77,8 +77,9 @@ deployment of receive wallet. Note the decimals is decimals of the reference tok
 ```solidity
 mapping(string => uint256) public minimal_mint_value;
 ```
-The remaining value of reference token in user's receive wallet must be larger than minimal mint value, 
-otherwise the custodian alliance will not mint for it. **Note**: for btc, use `btc_minimal_mint_value`.
+The remaining value of reference token in user's receive wallet must be larger than minimal mint value, otherwise the custodian alliance will not mint for it.
+
+**Note**: for btc, use `btc_minimal_mint_value`.
 ```solidity
 uint256 public btc_minimal_mint_value
 ```
@@ -90,8 +91,13 @@ cBTC minimal burn value.
 ```solidity
 mapping(string => uint256) public minimal_burn_value;
 ```
-The minimal burn value of corresponding cToken, the burn will fail if burn value is not enough.  **Note**: for btc, use `btc_minimal_mint_value`.
+The minimal burn value of corresponding cToken, the burn will fail if burn value is not enough. 
  
+**Note**: for btc, use `btc_minimal_mint_value`.
+```solidity
+mapping(string => uint256) public minimal_burn_value;
+```
+The minimal burn value of corresponding cToken, the burn will fail if burn value is not enough. 
 ```solidity
 mapping(string => uint256) public token_cooldown; // second
 ```
