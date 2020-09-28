@@ -85,15 +85,15 @@ uint256 public btc_minimal_mint_value
 ```
 cBTC minimal mint value.
 ```solidity
-uint256 public btc_minimal_burn_value;
-```
-cBTC minimal burn value.
-```solidity
 mapping(string => uint256) public minimal_burn_value;
 ```
 The minimal burn value of corresponding cToken, the burn will fail if burn value is not enough. 
  
-**Note**: for btc, use `btc_minimal_mint_value`.
+**Note**: for btc, use `btc_minimal_burn_value`.
+```solidity
+uint256 public btc_minimal_burn_value;
+```
+cBTC minimal burn value.
 ```solidity
 mapping(string => uint256) public minimal_burn_value;
 ```
