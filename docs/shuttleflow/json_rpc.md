@@ -114,7 +114,7 @@ Get user eth receive wallet.
 String, user ethereum receive wallet address
 ### Example
 ```bash
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletEth","params":["0x1d9fdbe7cad3d82cc539b3b7c8bd8a8437ad5b58", "0x0000000000000000000000000000000000000000"],"id":1}' -H "Content-Type: application/json" 127.0.0.1:8001
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletEth","params":["0x1d9fdbe7cad3d82cc539b3b7c8bd8a8437ad5b58", "0x0000000000000000000000000000000000000000"],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io
 
 {"jsonrpc":"2.0","id":1,"result":"0x4e0095dc1fed099ed73a749def57905387a11271"}
 ```
@@ -129,7 +129,7 @@ Get user btc receive wallet.
 String, user bitcoin receive wallet address
 ### Example
 ```bash
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletBtc","params":["0x1d9fdbe7cad3d82cc539b3b7c8bd8a8437ad5b58", "0x0000000000000000000000000000000000000000"],"id":1}' -H "Content-Type: application/json" 127.0.0.1:8001
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletBtc","params":["0x1d9fdbe7cad3d82cc539b3b7c8bd8a8437ad5b58", "0x0000000000000000000000000000000000000000"],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io
 
 {"jsonrpc":"2.0","id":1,"result":"2MutEXoJsQMm4jviPVchfm2HuZsbusVizCz"}
 ```
