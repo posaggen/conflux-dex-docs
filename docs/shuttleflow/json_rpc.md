@@ -134,6 +134,28 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletBtc","para
 {"jsonrpc":"2.0","id":1,"result":"2MutEXoJsQMm4jviPVchfm2HuZsbusVizCz"}
 ```
 
+### getTokenList
+Get token list supported by shuttleflow
+### Parameters
+null
+### Returns
+List of Object
+### Example
+```bash
+curl -X POST --data '{"jsonrpc":"2.0","method":"getTokenList","params":[""],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io 
+```
+
+### getDefiList
+Get defi list supported by shuttleflow
+### Parameters
+null
+### Returns
+List of Object
+### Example
+```bash
+curl -X POST --data '{"jsonrpc":"2.0","method":"getDefiList","params":[""],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io
+```
+
 ## Public Nodes
 
 Now we provide public api endpoint for both mainnet and testnet of shuttleflow:
