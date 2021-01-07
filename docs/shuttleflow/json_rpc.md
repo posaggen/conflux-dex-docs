@@ -8,7 +8,7 @@ Get user mint/burn operations list of specific user.
 {
     "type": "mint" | "burn"
     "token": "btc" | "eth" | lowercase erc20 address
-    "defi": conflux defi address (for shuttleflow frontend, hard code zero address)
+    "defi": conflux defi address (or zero address)
     "address": user conflux address
     "status": ["doing", "finished"]
 }
@@ -109,10 +109,10 @@ Get user eth receive wallet.
 #### Parameters
 (1) address: (String) user conflux address
 
-(2) defi: (String) conflux defi address (for shuttleflow frontend, hard code zero address)
+(2) defi: (String) conflux defi address
 #### Returns
 String, user ethereum receive wallet address
-### Example
+#### Example
 ```bash
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletEth","params":["0x1d9fdbe7cad3d82cc539b3b7c8bd8a8437ad5b58", "0x0000000000000000000000000000000000000000"],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io
 
@@ -124,10 +124,10 @@ Get user btc receive wallet.
 #### Parameters
 (1) address: (String) user conflux address
 
-(2) defi: (String) conflux defi address (for shuttleflow frontend, hard code zero address)
+(2) defi: (String) conflux defi address
 #### Returns
 String, user bitcoin receive wallet address
-### Example
+#### Example
 ```bash
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletBtc","params":["0x1d9fdbe7cad3d82cc539b3b7c8bd8a8437ad5b58", "0x0000000000000000000000000000000000000000"],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io
 
@@ -136,27 +136,27 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getUserReceiveWalletBtc","para
 
 ### getTokenList
 Get token list supported by shuttleflow
-### Parameters
+#### Parameters
 null
-### Returns
+#### Returns
 List of Object
-### Example
+#### Example
 ```bash
 curl -X POST --data '{"jsonrpc":"2.0","method":"getTokenList","params":[""],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io 
 ```
 
 ### getDefiList
 Get defi list supported by shuttleflow
-### Parameters
+#### Parameters
 null
-### Returns
+#### Returns
 List of Object
-### Example
+#### Example
 ```bash
 curl -X POST --data '{"jsonrpc":"2.0","method":"getDefiList","params":[""],"id":1}' -H "Content-Type: application/json" https://dev.shuttleflow.io
 ```
 
-## Public Nodes
+### Public Nodes
 
 Now we provide public api endpoint for both mainnet and testnet of shuttleflow:
 
