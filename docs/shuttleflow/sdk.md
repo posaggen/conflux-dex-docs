@@ -1,5 +1,14 @@
 #Conflux Shuttleflow SDK
 https://www.npmjs.com/package/conflux-crosschain
+
+## Public Nodes
+
+Now we provide public api endpoint for both mainnet and testnet of shuttleflow:
+
+Mainnet: https://open-api.shuttleflow.io
+
+Testnet: https://dev.shuttleflow.io
+
 ## Functions 
 ```
 // get ethereum receive wallet address (used for both eth & usdt) of user.
