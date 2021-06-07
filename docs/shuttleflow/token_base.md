@@ -1,30 +1,99 @@
 ### TokenBase
 
 `TokenBase` is the cross chain token contract (cToken).
-It follows ERC777 standard except burn function.
+It follows [ERC777 standard](https://eips.ethereum.org/EIPS/eip-777) except the `burn` function.
 
-Owership and autorities:
-* Owner of cToken is initially who deployed it (Conflux admin), then its owner will transfer 
-the ownership to CustodianCore contract. Only owner of the contract is able to mint cToken.
+#### Owership and autorities
+* Owner of cToken is initially who deployed it (Shuttleflow admin), then the ownership will be transfered to Shuttleflow governance contract. Only owner of the contract is able to mint cToken.
 * Only pausers are able to pause/unpause the cToken contract. Initially, the pauser 
-of cToken is Conflux admin, the pauser can add other pausers.
+of cToken is Shuttleflow admin.
 
-Core Functions:
+#### Contract ABI
 
-TokenBase implements the functions of ERC777 standard, with a different mint and burn function:
+[TokenBase ABI](contracts/TokenBaseABI.json)
+
+#### Contract Interface
+
 ```solidity
-function mint(
-        address account, // user conflux address
-        uint256 amount, // user mint amount
-        address fee_address, // sponsor of the token
-        uint256 fee, // mint fee, or mint fee + receive wallet fee
-        address defi, // conflux defi 
-        string memory tx_id // cross chain transaction hash
-) public;
+pragma solidity 0.5.11;
+
+interface ITokenBase {
+    function name() external view returns (string memory);
+
+    function symbol() external view returns (string memory);
+
+    function decimals() external pure returns (uint8);
+
+    function granularity() external pure returns (uint256);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address tokenHolder) external view returns (uint256);
+
+    function send(
+        address recipient,
+        uint256 amount,
+        bytes calldata data
+    ) external;
+
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+
+    function isOperatorFor(address operator, address tokenHolder)
+        external
+        view
+        returns (bool);
+
+    function authorizeOperator(address operator) external;
+
+    function revokeOperator(address operator) external;
+
+    function defaultOperators() external view returns (address[] memory);
+
+    function operatorSend(
+        address sender,
+        address recipient,
+        uint256 amount,
+        bytes calldata data,
+        bytes calldata operatorData
+    ) external;
+
+    function allowance(address holder, address spender)
+        external
+        view
+        returns (uint256);
+
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(
+        address holder,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
+
+    function mint(
+        address account,
+        uint256 amount,
+        address fee_address,
+        uint256 fee,
+        address defi,
+        string calldata tx_id
+    ) external returns (bool);
+
+    function burn(
+        address user_addr,
+        uint256 amount,
+        uint256 expected_fee,
+        string calldata addr,
+        address defi_relayer
+    ) external returns (bool);
+}
 ```
-Owner authority required.
- 
-Mint tokens for user and mint tokens for token sponsor as fee.
+
+#### Core Functions
+
+TokenBase implements the functions of ERC777 standard, with a different burn function:
 ```solidity
 function burn(
         address user_addr, // user conflux address
@@ -38,7 +107,7 @@ Burn cToken from sender's address.
 
 `user_addr` is used to logging, in case Conflux Defi burn cToken for normal user.
 
-`amount` should be larger than `burn_fee` and `minimal_burn_value` in CustodianCore contract(Note here the decimals 
+`amount` should be larger than `burn_fee` and `minimal_burn_value` in [CustodianCore](custodian_core.md) contract(Note here the decimals 
 of `amount` is 18 and decimals of `burn_fee` and `minimal_burn_value` in CustoidanCore contract is reference token's decimal, 
 the smart contract will do the decimal conversion for comparison). Besides, if the fee is higher than
 `expected_fee`, the burn transaction will revert.
