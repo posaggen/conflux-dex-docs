@@ -8,16 +8,16 @@ custodian nodes, including:
 * The information of token sponsors
 * The upper/lower bounds of custodian alliance's bitcoin hot wallet
 
-Ownership and authorities: 
+#### Ownership and authorities
 * At this point, the owner of CustodianCore is Conflux admin, who is enabled to modify 
 custodian node configurations and custodian membership.
 * CustodianCore is the owner of all cToken so only it has the authority to mint cTokens.
 
-Upgrade:
-* Custodian core follows proxy delegate pattern which enables upgrading contract logic without modification of 
-contract address and get rid of data migration.
+#### Contract ABI
 
-####Core Storage Variables
+[CustodianCore ABI](contracts/CustodianCoreABI.json)
+
+#### Core Storage Variables
 ```solidity
 ITokenBase[] public token_list;
 ```
@@ -138,25 +138,3 @@ function setTokenParams(
 This function can be called by anyone.
 
 This function helps the sponsor of token `ref` to change the token parameters if the token is not in cooldown.
-```solidity 
-function mint(
-        address defi, // conflux defi goverance contract address
-        address token, // cToken address
-        address to, // user conflux address
-        uint256 amount, // user mint address
-        uint256 fee, // user mint fee
-        string memory tx_id, // corresponding ethereum/bitcoin mint transaction hash
-        bytes[] memory signatures // signatures of custodian members
-) public;
-```
-This function can only be called by custodian member's hot wallet address.
-
-Mint cToken for a user and then send the minted cToken to receive smart contract of specific 
-defi(if user assgined) with default operator authority. This functions needs over 2/3 signatures
-  from current custodian members. The parameter `defi` is determined by user's receive wallet, when 
-  defi is zero address or assgined defi does not support assgined token, the cToken will be left in user's conflux address.
-  
-For example, when defi is Boomflow contract and token is cETH address, the custodian alliance will firstly mint 
-corresponding amount of cETH to user's conflux address, and then operator send these cETH to CRCL-ETH address. Then 
-cETH will be locked in CRCL-ETH address and DEX-ETH will be minted to user.
-
