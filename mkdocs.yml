@@ -3,8 +3,6 @@ nav:
     - Welcome to Conflux DEX: index.md
     - ShuttleFlow:
       - Introduction: shuttleflow/index.md
-      - JSON RPC: shuttleflow/json_rpc.md
-      - Conflux Crosschain SDK: shuttleflow/sdk.md
     - BoomFlow:
       - Introduction: boomflow/index.md
     - MatchFlow:
