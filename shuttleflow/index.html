@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Introduction - Conflux DEX Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_input_path = "shuttleflow/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Conflux DEX Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#terminologies">Terminologies</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../matchflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../matchflow/ws/">WebSocket API</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../matchflow/reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../matchflow/frontend/">Frontend Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../matchflow/market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../matchflow/eip712/">EIP712 Signature</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Conflux DEX Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>ShuttleFlow &raquo;</li>
+        
+      
+    
+    <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="conflux-shuttleflow">Conflux Shuttleflow</h1>
+<p>Shuttleflow is Conflux cross chain solution to integrate user assets from bitcoin and
+ethereum. It provides following cross chain functionalities:
+* Support assets cross chain migration between conflux and bitcoin/ethereum/erc20 token.
+* Enable anybody to add new cross chain erc20 token.
+* Wrapping cross chain migration from ethereum defi to conflux defi(vice versa) to an atomic operation.</p>
+<h2 id="terminologies">Terminologies</h2>
+<ul>
+<li><code>Cross chain asset(reference token)</code>: The external chain asset that can be migrated to conflux chain by shuttleflow. Such as BTC, ETH, USDT.</li>
+<li><code>cToken(Conflux Token)</code>: An ERC777 token on conflux backed 1:1 by tokens from other blockchain. e.g. 1 cBTC is backed by 1 bitcoin.</li>
+<li><code>User</code>: The people who want to transfer assets from other blockchain to Conflux using shuttleflow.</li>
+<li><code>Token Sponsor</code>: The sponsor of a specific cross chain asset. When user want to add a new erc20 to cross chain assets, 
+he/she need to become the sponsor of that erc20 token, meanwhile some cETH should be mortgaged by the sponsor to conflux cross chain smart contract, which is used to reimburse the cross chain ethereum transaction 
+fee of custodian alliance, the sponsor will be able to obtain and configure the mint/burn operation fee for user who want to migrate the corresponding erc20 token. </li>
+<li><code>Custodian Member</code>: A member of custodian alliance, holds 6 private keys: hot/cold wallet of conflux/ethereum/bitcoin chain.</li>
+<li><code>Custodian Node</code>: Custodian service run independently by each custodian member, which hosts the hot wallet private key of 
+custodian member, monitor the blockchain data and sign user's mint/burn requests, settle the mint/burn transactions on chain automatically
+ when more than 2/3 signatures are collected.</li>
+<li><code>Custodian Alliance</code>: A group of custodian members. Custodian alliance is able to mint/burn cToken for users when signatures from 
+more than 2/3 custodian members are collected. It also maintain hot &amp; cold wallet to manage users' cross chain assets.</li>
+<li><code>Custodian Hot Wallet</code>: The multisig wallets of custodian alliance controlled by hot wallet private key of custodian members, which hold the users assets from other blockchain
+(the assets transferred to payment wallets).</li>
+<li><code>Custodian Cold Wallet</code>: The multisig wallets of custodian alliance controlled by cold wallet private key of custodian members. When amount of assets in alliance hot wallet is larger than upper bound, the part exceed the bound will be moved to cold wallet.</li>
+</ul>
+<p>This rest document is organized as in the following sections:</p>
+<ul>
+<li>
+<p><a href="workflow/">Shuttle-in/out Process</a></p>
+</li>
+<li>
+<p><a href="smart_contract/">Shuttleflow Contracts</a></p>
+</li>
+<li>
+<p><a href="custodian/">Custodian Node</a> (under development)</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../boomflow/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Welcome to Conflux DEX"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright © 2020 Conflux. All Rights Reserved.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../boomflow/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

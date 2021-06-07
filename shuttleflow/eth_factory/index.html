@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Eth factory - Conflux DEX Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Eth factory";
+    var mkdocs_page_input_path = "shuttleflow/eth_factory.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/ws/">WebSocket API</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/frontend/">Frontend Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/eip712/">EIP712 Signature</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Conflux DEX Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Eth factory</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="ethfactory">EthFactory</h3>
+<p><code>EthFactory</code> (contracts/factory/EthFactory.sol) is the governance contract of custodian 
+alliance on Ethereum chain. It maintains the information of custodian members and configurations for 
+custodian nodes, including:
+* Custodian member's ethereum address
+* The registered defi relayer contracts.
+* The upper/lower bounds of custodian alliance's eth&amp;erc20 hot wallet
+Ownership and authorities: 
+* At this point, the owner of EthFactory is Conflux admin, who is enabled to modify 
+custodian node configurations and custodian membership.
+* CustodianCore is the owner of all cToken so only it has the authority to mint cTokens.</p>
+<p>Upgrade:
+* EthFactory follows proxy delegate pattern which enables upgrading contract logic without modification of 
+contract address and get rid of data migration.</p>
+<h3 id="core-functions">Core Functions:</h3>
+<pre><code class="language-solidity">function burn(
+        address token,
+        address payable toAddress,
+        address payable defi_relayer,
+        uint256 amount,
+        string memory tx_id,
+        bytes[] memory signatures
+) public;
+</code></pre>
+<p>Only custodian member can call it. </p>
+<p>Withdraw eth/erc20 token to user's address. This functions needs over 2/3 signatures from current custodian members.</p>
+<p>If provided <code>defi_relayer</code> is registered, the token will be sent to <code>defi_relayer</code> by calling its <code>deposit</code> for <code>depositToken</code>.</p>
+<p>Specifically, if token is zero address(denote ETH) and defi_relayer is not used, the withdrawed eth will be firstly 
+sent to the <code>msg.sender</code>(custodian member who settled this burn request), and then <code>msg.sender</code> will send these ETH to 
+<code>toAddress</code>(user address). This avoids some user withdraw ETH directly to the address of some centralized exchange, 
+which is not able to detect the internal ETH transaction in a contract call.</p>
+<h3 id="receivewallet">ReceiveWallet</h3>
+<p><code>ReceiveWallet</code>(or payment wallet) is the contract of receive wallet of custodian alliance for user. 
+The receive wallet can only transfer eth/erc20 token to the address of EthFactory, which is initialized when receive wallet contract construction and can not
+ be modified in future. </p>
+<p>Core Functions:</p>
+<pre><code class="language-solidity">function retrieve(
+        address token, // erc20 address or zero address for ETH
+        uint256 deploy_fee,
+        uint256 retrieve_fee
+) public;
+</code></pre>
+<p>Only custodian member or Create2Factory contract can call it. </p>
+<p>Transfer all eth/erc20 token to EthFactory contract. Where deploy_fee is the fee for 
+deployment of receive wallet, retrieve_fee is the fee for custodian member to move these 
+token from user's receive wallet to hot wallet(governance contract).</p>
+<h3 id="create2factory">Create2Factory</h3>
+<p><code>Create2Factory</code> is the generator of user payment wallet. 
+It can calculate the address of payment wallet of a specific user conflux address before the 
+payment wallet contract is really deployed.</p>
+<p>This contract enable the custodian alliance provide the payment wallet address to user and 
+deploy the payment wallet contract after they received at least one payment from user. </p>
+<pre><code class="language-solidity">function deploy(
+        bytes memory code,
+        uint256 salt,
+        address token,
+        uint256 deploy_fee,
+        uint256 retrieve_fee
+) public;
+</code></pre>
+<p>Only custodian member can call it. </p>
+<p>Deploy the receive wallet of user for specific defi(encoded in <code>salt</code>), and call the <code>retrieve</code> function 
+of the receive wallet deployed, with deploy_fee.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright © 2020 Conflux. All Rights Reserved.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

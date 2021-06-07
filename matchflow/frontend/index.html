@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Frontend Integration - Conflux DEX Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Frontend Integration";
+    var mkdocs_page_input_path = "matchflow/frontend.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../shuttleflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../shuttleflow/json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../shuttleflow/sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ws/">WebSocket API</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Frontend Integration</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eip712/">EIP712 Signature</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Conflux DEX Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>MatchFlow &raquo;</li>
+        
+      
+    
+    <li>Frontend Integration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>If you want to develop a decentralized exchange (DEX) on Conflux chain, MatchFlow is a good choice for you to quickly get start.</p>
+<h1 id="why-matchflow">Why MatchFlow</h1>
+<p>MatchFlow provides APIs to place/cancel orders and query market data. Therefore, you need only to develop a mobile app or web page, and integrates with MatchFlow <a href="../conflux-dex-api.html" target="_blank">REST API</a> and <a href="../ws/">WebSocket API</a>. Besides, MatchFlow API allow to set specific trade fee rate/recipient, app could earn trade fee from every order matching.</p>
+<h1 id="migrate-from-cex">Migrate from CEX</h1>
+<p>MatchFlow provides standard REST and WebSocket APIs following popular centralized exchanges. Any centralized exchange app or web page could easily migrate to Conflux DEX. The only difference between decentralized exchange (DEX) and centralized exchange (DEX) is that Conflux DEX do not requires username/password based login. Instead, Conflux DEX requires user signature to validate authority when user want to place or cancel orders.</p>
+<h1 id="eip712-signature">EIP712 Signature</h1>
+<p>Some REST APIs requires user signature to change user assets:</p>
+<ul>
+<li>Place order</li>
+<li>Cancel order</li>
+<li>Withdraw</li>
+<li>Transfer</li>
+</ul>
+<p>Conflux DEX follow the way of EIP712 to validate signed messages, any app based on MatchFlow is required to follow the <a href="../eip712/">type schema</a> to sign messages. <a href="https://www.npmjs.com/package/boomflow-frontend">boomflow frontend SDK</a> is the recommended SDK to interact with MatchFlow for signature required REST APIs.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../market_maker/" class="btn btn-neutral float-right" title="Market Maker">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../reg_user/" class="btn btn-neutral" title="User Registration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright © 2020 Conflux. All Rights Reserved.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../reg_user/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../market_maker/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

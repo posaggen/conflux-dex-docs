@@ -7,24 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>WebSocket API - Conflux DEX Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "WebSocket API";
-    var mkdocs_page_input_path = "matchflow\\ws.md";
+    var mkdocs_page_input_path = "matchflow/ws.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
         <div role="search">
@@ -45,52 +47,135 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Welcome to Conflux DEX</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">MatchFlow</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../">Introduction</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">WebSocket API</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#matchflow-websocket-api">MatchFlow WebSocket API</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../shuttleflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../shuttleflow/json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../shuttleflow/sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">WebSocket API</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#general">General</a>
         <ul>
-        
-            <li><a class="toctree-l4" href="#general">General</a></li>
-        
-            <li><a class="toctree-l4" href="#market-data">Market Data</a></li>
-        
-            <li><a class="toctree-l4" href="#asset-and-order">Asset and Order</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#websocket-url">Websocket URL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#heartbeat-and-connection">Heartbeat and Connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subscribe-to-topic">Subscribe to Topic</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unsubscribe">Unsubscribe</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#topic-response">Topic Response</a>
+    </li>
         </ul>
-    
-
-    </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../eip712/">EIP712 Signature</a>
-                </li>
-    </ul>
-	    </li>
-          
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#market-data">Market Data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#best-bidoffer">Best Bid/Offer</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content">Update Content</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#market-depth">Market Depth</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_1">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_1">Update Content</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#market-details-in-last-24-hours">Market Details in Last 24 Hours</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_2">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_2">Update Content</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#market-tick">Market Tick</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_3">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_3">Update Content</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trade-detail">Trade Detail</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_4">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_4">Update Content</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#asset-and-order">Asset and Order</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#account-updates">Account Updates</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_5">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arguments">Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_5">Update Content</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#order-updates">Order Updates</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_6">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arguments_1">Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_6">Update Content</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trade-details">Trade Details</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#topic_7">Topic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arguments_2">Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-content_7">Update Content</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Frontend Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eip712/">EIP712 Signature</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -119,6 +204,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -135,38 +221,35 @@
 <p>On the other hand, Websocket server will periodically (20 seconds) disconnect clients if no topic subscribed.</p>
 <h3 id="subscribe-to-topic">Subscribe to Topic</h3>
 <p>To subscribe a topic, please send below message to Websocket server:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;topic&quot;: &quot;topic name&quot;,
     &quot;sub&quot;: true,
     &quot;arguments&quot;: {}
 }
 </code></pre>
-
 <p>The <code>arguments</code> is used to specify additional parameters to subscribe a topic, e.g. specify user address to subscribe <strong>Asset</strong> or <strong>Order</strong> related topics.</p>
 <h3 id="unsubscribe">Unsubscribe</h3>
 <p>To unsubscribe, please send below message to Websocket server:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;topic&quot;: &quot;topic name&quot;,
     &quot;sub&quot;: false
 }
 </code></pre>
-
 <h3 id="topic-response">Topic Response</h3>
 <p>Websocket server push messages of different topics in the same format as below:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;topic&quot;: &quot;topic name&quot;,
     &quot;timestamp&quot;: 1582609926336,
     &quot;data&quot;: {}
 }
 </code></pre>
-
 <p>As for the <code>data</code> value, please refer to the <strong>Update Content</strong> that defined for each topic.</p>
 <h2 id="market-data">Market Data</h2>
 <h3 id="best-bidoffer">Best Bid/Offer</h3>
 <h4 id="topic">Topic</h4>
 <p><code>market.$product.bbo</code></p>
 <h4 id="update-content">Update Content</h4>
-<pre><code class="java">public class BestBidOffer {
+<pre><code class="language-java">public class BestBidOffer {
     /**
      * Product name.
      */
@@ -201,19 +284,17 @@
     private int askCount;
 }
 </code></pre>
-
 <h3 id="market-depth">Market Depth</h3>
 <h4 id="topic_1">Topic</h4>
 <p><code>market.$product.depth.$step</code></p>
 <p><code>$step</code>: market depth aggregation level, including "step0", "step1", "step2", "step3", "step4" and "step5". For "step0", market depth data supports up to 150 levels. For others, market depth data supports up to 20 levels.</p>
 <h4 id="update-content_1">Update Content</h4>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;Buy&quot;: [{}],
     &quot;Sell&quot;: [{}]
 }
 </code></pre>
-
-<pre><code class="java">public class DepthPriceLevel {
+<pre><code class="language-java">public class DepthPriceLevel {
     /**
      * Order price.
      */
@@ -228,12 +309,11 @@
     private int count;
 }
 </code></pre>
-
 <h3 id="market-details-in-last-24-hours">Market Details in Last 24 Hours</h3>
 <h4 id="topic_2">Topic</h4>
 <p><code>market.$product.detail</code></p>
 <h4 id="update-content_2">Update Content</h4>
-<pre><code class="java">public class Tick implements Cloneable {
+<pre><code class="language-java">public class Tick implements Cloneable {
     /**
      * Tick id. (auto-generated)
      */
@@ -284,13 +364,12 @@
     private Timestamp updateTime;
 }
 </code></pre>
-
 <h3 id="market-tick">Market Tick</h3>
 <h4 id="topic_3">Topic</h4>
 <p><code>market.$product.tick.$granularity</code></p>
 <p><code>$granularity</code>: tick granularity, including 1min, 5min, 15min, 30min, 60min, 1day, 1week and 1month.</p>
 <h4 id="update-content_3">Update Content</h4>
-<pre><code class="java">public class Tick implements Cloneable {
+<pre><code class="language-java">public class Tick implements Cloneable {
     /**
      * Tick id. (auto-generated)
      */
@@ -341,12 +420,11 @@
     private Timestamp updateTime;
 }
 </code></pre>
-
 <h3 id="trade-detail">Trade Detail</h3>
 <h4 id="topic_4">Topic</h4>
 <p><code>market.$product.trade.detail</code></p>
 <h4 id="update-content_4">Update Content</h4>
-<pre><code class="java">public class Trade {
+<pre><code class="language-java">public class Trade {
     /**
      * Trade id. (auto-generated)
      */
@@ -409,7 +487,6 @@
     private Timestamp updateTime = this.createTime;
 }
 </code></pre>
-
 <h2 id="asset-and-order">Asset and Order</h2>
 <h3 id="account-updates">Account Updates</h3>
 <h4 id="topic_5">Topic</h4>
@@ -422,7 +499,7 @@
 <li>1: Update when either account balance changed or available balance changed.</li>
 </ul>
 <h4 id="update-content_5">Update Content</h4>
-<pre><code class="java">public class BalanceChange {
+<pre><code class="language-java">public class BalanceChange {
     /**
      * Balance change type, including &quot;OrderPlace&quot;, &quot;OrderMatch&quot;, &quot;OrderCancel&quot;,
      * &quot;Deposit&quot;, &quot;Withdraw&quot; and &quot;Transfer&quot;.
@@ -450,7 +527,6 @@
     private long changeTime;
 }
 </code></pre>
-
 <h3 id="order-updates">Order Updates</h3>
 <h4 id="topic_6">Topic</h4>
 <p><code>order.$product</code></p>
@@ -458,7 +534,7 @@
 <h4 id="arguments_1">Arguments</h4>
 <p><code>address</code>: user address.</p>
 <h4 id="update-content_6">Update Content</h4>
-<pre><code class="java">public class OrderChange {
+<pre><code class="language-java">public class OrderChange {
     /**
      * Changed order ID.
      */
@@ -525,7 +601,6 @@
     private BigDecimal filledFunds;
 }
 </code></pre>
-
 <h3 id="trade-details">Trade Details</h3>
 <h4 id="topic_7">Topic</h4>
 <p><code>trade.$product</code></p>
@@ -533,7 +608,7 @@
 <h4 id="arguments_2">Arguments</h4>
 <p><code>address</code>: user address.</p>
 <h4 id="update-content_7">Update Content</h4>
-<pre><code class="java">public class UserTrade {
+<pre><code class="language-java">public class UserTrade {
     /**
      * Trade ID.
      */
@@ -589,7 +664,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../eip712/" class="btn btn-neutral float-right" title="EIP712 Signature">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../reg_user/" class="btn btn-neutral float-right" title="User Registration">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -606,7 +681,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -616,20 +691,25 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
         <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../eip712/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../reg_user/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
     <script>var base_url = '../..';</script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

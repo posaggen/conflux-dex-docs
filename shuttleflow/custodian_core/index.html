@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Custodian core - Conflux DEX Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Custodian core";
+    var mkdocs_page_input_path = "shuttleflow/custodian_core.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/ws/">WebSocket API</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/frontend/">Frontend Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/eip712/">EIP712 Signature</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Conflux DEX Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Custodian core</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="custodiancore">CustodianCore</h3>
+<p><code>CustodianCore</code> is the governance contract of custodian 
+alliance on Conflux chain. It maintains the information of custodian members and configurations for 
+custodian nodes, including:
+* Custodian member's address/public key of different chain
+* The address of all cTokens and their configurations such as mint/burn fee
+* The information of token sponsors
+* The upper/lower bounds of custodian alliance's bitcoin hot wallet</p>
+<h4 id="ownership-and-authorities">Ownership and authorities</h4>
+<ul>
+<li>At this point, the owner of CustodianCore is Conflux admin, who is enabled to modify 
+custodian node configurations and custodian membership.</li>
+<li>CustodianCore is the owner of all cToken so only it has the authority to mint cTokens.</li>
+</ul>
+<h4 id="contract-abi">Contract ABI</h4>
+<p><a href="../contracts/CustodianCoreABI.json">CustodianCore ABI</a></p>
+<h4 id="core-storage-variables">Core Storage Variables</h4>
+<pre><code class="language-solidity">ITokenBase[] public token_list;
+</code></pre>
+<p>Registered cTokens.</p>
+<pre><code class="language-solidity">mapping(address =&gt; string) public token_reference;
+</code></pre>
+<p>Mapping of cToken address to external chain assets(reference), reference can be 'eth'/'btc'/lowercase erc20 address.</p>
+<p>For example, </p>
+<p>cETH address =&gt; 'eth',</p>
+<p>cBTC address =&gt; 'btc', </p>
+<p>cUSDT address =&gt; '0xdac17f958d2ee523a2206206994597c13d831ec7'.</p>
+<pre><code class="language-solidity">mapping(address =&gt; uint8) public token_decimals;
+</code></pre>
+<p>Mapping of cToken address to external chain decimals.</p>
+<p>For example, </p>
+<p>cETH address =&gt; 18,</p>
+<p>cBTC address =&gt; 8, </p>
+<p>cUSDT address =&gt; 6.</p>
+<pre><code class="language-solidity">mapping(string =&gt; bool) public admin_token;
+</code></pre>
+<p>Denote each cToken is admin token or not.</p>
+<p>Admin token can only be sponsored by whitelist admin of custodian core contract, and will maintain both 
+hot and cold wallet. For non-admin token, anyone can be its sponsor and only hot wallet will be maintained.</p>
+<pre><code class="language-solidity">mapping(string =&gt; address) reference_token; // inverse token_reference
+</code></pre>
+<p>Anti mapping of <code>token_reference</code>.</p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public burn_fee;
+</code></pre>
+<p>The fee taken from user during cToken burn. Note the decimals is decimals of the reference token.</p>
+<p>For example, the sponsor want to take 0.1 cUSDT when user burn cUSDT, here burn_fee['usdt'] should be 0.1 * 1e6.</p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public mint_fee;
+</code></pre>
+<p>The fee taken from user during cToken mint. Note the decimals is decimals of the reference token.</p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public wallet_fee;
+</code></pre>
+<p>When a user want to migrate token from ethereum to conflux, his/her receive wallet will be 
+deployed firstly if it is not deployed before. <code>wallet_fee</code> denote the fee taken from user during 
+deployment of receive wallet. Note the decimals is decimals of the reference token.</p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public minimal_mint_value;
+</code></pre>
+<p>The remaining value of reference token in user's receive wallet must be larger than minimal mint value, otherwise the custodian alliance will not mint for it.</p>
+<p><strong>Note</strong>: for btc, use <code>btc_minimal_mint_value</code>.</p>
+<pre><code class="language-solidity">uint256 public btc_minimal_mint_value
+</code></pre>
+<p>cBTC minimal mint value.</p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public minimal_burn_value;
+</code></pre>
+<p>The minimal burn value of corresponding cToken, the burn will fail if burn value is not enough. </p>
+<p><strong>Note</strong>: for btc, use <code>btc_minimal_burn_value</code>.</p>
+<pre><code class="language-solidity">uint256 public btc_minimal_burn_value;
+</code></pre>
+<p>cBTC minimal burn value.</p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public minimal_burn_value;
+</code></pre>
+<p>The minimal burn value of corresponding cToken, the burn will fail if burn value is not enough. </p>
+<pre><code class="language-solidity">mapping(string =&gt; uint256) public token_cooldown; // second
+</code></pre>
+<p>This can only set by custodian core whitelist admin. The token spnosor should not 
+change the token parameters frequently, so the sponsor must wait a cooldown after 
+the token parameters is changed.</p>
+<h4 id="core-functions">Core Functions:</h4>
+<pre><code class="language-solidity">function sponsorToken(
+        string memory ref, // lowercase erc20 ethereum address
+        uint256 amount, // amount of cETH mortgaged
+        uint256 _burn_fee, // burn fee of erc20 token, in erc20 decimals
+        uint256 _mint_fee, // mint fee of erc20 token, in erc20 decimals
+        uint256 _wallet_fee, // receive wallet fee of erc20 token, in erc20 decimals
+        uint256 _minimal_mint_value, // minimal mint value of erc20 token, in erc20 decimals
+        uint256 _minimal_burn_value // minimal burn value of erc20 token, in erc20 decimals
+) public;
+</code></pre>
+<p>This function can be called by anyone.</p>
+<p>This function helps <code>msg.sender</code> become the sponsor of an erc20 token, specified by <code>ref</code>.</p>
+<p>The governance contract will transfer <code>amount</code> cETH from <code>msg.sender</code> by operator authority, and compare the 
+amount to the current sponsor of <code>ref</code>(if exists), the sponsor will be replaced by <code>msg.sender</code> if <code>amount</code> is large enough.
+The token parameters of <code>ref</code> will also be replaced by the parameters sender provided, if the token is not in cooldown. </p>
+<p>For more information of sponsor replacement logic, see <a href="../token_sponsor/">token sponsor</a>.</p>
+<pre><code class="language-solidity">function setTokenParams(
+        string memory ref, // lowercase erc20 ethereum address
+        uint256 _burn_fee,
+        uint256 _mint_fee,
+        uint256 _wallet_fee,
+        uint256 _minimal_mint_value,
+        uint256 _minimal_burn_value
+) public;
+</code></pre>
+<p>This function can be called by anyone.</p>
+<p>This function helps the sponsor of token <code>ref</code> to change the token parameters if the token is not in cooldown.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright © 2020 Conflux. All Rights Reserved.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

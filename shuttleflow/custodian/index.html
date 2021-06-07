@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Custodian Node - Conflux DEX Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Custodian Node";
+    var mkdocs_page_input_path = "shuttleflow/custodian.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/ws/">WebSocket API</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/frontend/">Frontend Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../matchflow/eip712/">EIP712 Signature</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Conflux DEX Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Custodian Node</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="custodian-node">Custodian Node</h1>
+<p>Each member of custodian alliance need to run a custodian node, all custodian nodes form
+a p2p network.</p>
+<h2 id="design-goals">Design Goals</h2>
+<p>The custodian node have following design goals:</p>
+<ul>
+<li>Monitor conflux, ethereum smart contract events and bitcoin transactions to synchronize 
+user requests and custodian operations, e.g. mint, burn.</li>
+<li>Collect signatures from other custodian nodes in p2p network, automatically send transactions on 
+different blockchain to process user request or custodian operations when over 2/3 signatures are collected.</li>
+<li>Since the custodian alliance share one hot multi-signature wallet for bitcoin and ethereum, different 
+custodian node should be consistent in the way to process an request, e.g., pick the same utxos of
+bitcoin hot wallet for a user withdraw request.</li>
+<li>All communications with other custodian nodes should be validated.</li>
+</ul>
+<h2 id="components-design-and-implementation">Components Design and Implementation</h2>
+<h3 id="configuration">Configuration</h3>
+<p>A custodian node should be configured with the private keys and other information 
+of a custodian member, see <a href="../README.md">README</a> for detail.</p>
+<h3 id="p2p-network">P2P Network</h3>
+<p>All custodian nodes broadcast messages in a gossip p2p network with following 
+configurations:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p2p_throttle_duration</td>
+<td>p2p message throttle time window duration</td>
+</tr>
+<tr>
+<td>p2p_throttle_max</td>
+<td>maximum number of message from a socket in one time window</td>
+</tr>
+<tr>
+<td>fanout</td>
+<td>fan-out of p2p network</td>
+</tr>
+</tbody>
+</table>
+<h4 id="connection-authentication">Connection Authentication</h4>
+<p>All new connection to a p2p server of custodian node will be authenticated. The request 
+header of any new connection must has following three fields:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timestamp</td>
+<td>utc timestamp when clients try to connect to server</td>
+</tr>
+<tr>
+<td>signer</td>
+<td>conflux address of a custodian member</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>the signature of a custodian member for a message which is the concatenation of server host ip and timestamp</td>
+</tr>
+</tbody>
+</table>
+<p>On the server side, the signature is checked and the connection is authenticated if 
+the timestamp is larger than any successful connections of signer before, which ensure 
+the signature of same timestamp cannot be reused.</p>
+<h4 id="rpc">RPC</h4>
+<p>Custodian node provides multiple RPC for the frontend to display process of user operation and 
+custodian alliance status. See JSON-RPC part of <a href="../README.md">README</a>.</p>
+<h4 id="message-authentication">Message Authentication</h4>
+<p>All incoming messages from other custodian node will be authenticated in two steps:</p>
+<ul>
+<li>The whole message should be signed by a current custodian member with its conflux private key. Furthermore, 
+for different type of user operations, this ensure the message is sent by a custodian member.</li>
+<li>Each message contains the parameters of a specific operation, the hash of the operation and signature of hash of 
+a valid custodian member. The custodian node who received this message will first compute the operation hash
+with the operation parameters in the message and check if it is equal to the hash provided in the message, then 
+validate the signature of hash. The operation hash here will also be checked in the smart contract of Shuttleflow when an
+operation is settled on chain.</li>
+</ul>
+<p>Since custodian member can change, if the message from a peer is signed by address which is not member 
+of current custodian alliance, the connection will be dropped.</p>
+<h3 id="user-payment-wallet">User Payment Wallet</h3>
+<h4 id="ethereum-payment-wallet">Ethereum Payment Wallet</h4>
+<p>The ethereum payment wallet for user is a smart contract on ethereum chain, 
+which is used to receive eth and erc20 token from user. </p>
+<p>Each user has a unique payment wallet contract for specific conflux defi registered in conflux cross chain governance contract. When user transfer eth or erc20 token
+to the payment wallet contract, the custodian alliance will mint corresponding cToken and CRC-L token 
+for user.</p>
+<h4 id="bitcoin-payment-wallet">Bitcoin Payment Wallet</h4>
+<p>The bitcoin payment wallet for user is a special multi-sig wallet with following bitcoin script(scriptPubKey):</p>
+<pre><code>${user_conflux_address}
+${conflux_defi_address}
+OP_DROP
+${M}
+${public_key_1}
+${public_key_2}
+...
+${public_key_N}
+${N}
+OP_CHECKMULTISIG
+````
+where `${N}` is the total number of custodian members, `${M}` denotes the required minimum number of signatures 
+from different custodian members, `${public_key_i}` is the public key of i-th custodian member.
+
+Any one want to spend the utxo with the scriptPubKey above need to provide a scriptSig:
+</code></pre>
+<p>OP_0
+${signature_1}
+${signature_2}
+...
+${signature_M}
+```</p>
+<h3 id="blockchain-monitoring">Blockchain Monitoring</h3>
+<p>Custodian node will monitor the contract events emitted by Shuttleflow smart contract 
+and bitcoin transaction to user payment wallet.</p>
+<p>This table shows the contract event monitored by custodian node:</p>
+<table>
+<thead>
+<tr>
+<th>Contract</th>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CustodianCore</td>
+<td>MemberChange</td>
+<td>Custodian membership changed</td>
+</tr>
+<tr>
+<td>CustodianCore</td>
+<td>BtcHotToCold</td>
+<td>New transfer operation from bitcoin hot wallet to cold wallet</td>
+</tr>
+<tr>
+<td>TokenBase</td>
+<td>Minted</td>
+<td>User mint operation finished</td>
+</tr>
+<tr>
+<td>TokenBase</td>
+<td>Burnt</td>
+<td>New user withdraw operation</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>BurnSuccess</td>
+<td>User ETH withdraw operation finished</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>BurnSuccessERC20</td>
+<td>User ERC20 withdraw operation finished</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>WalletTransfer</td>
+<td>An operation using cold private key finished</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>shareProfitETH</td>
+<td>Transferred profit(ETH) to a custodian member</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>shareProfitERC20</td>
+<td>Transferred profit(ERC20) to a custodian member</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>HotToCold</td>
+<td>Transfer from hot wallet to cold wallet finished</td>
+</tr>
+<tr>
+<td>EthFactory</td>
+<td>HotToColdDetail</td>
+<td>Detail of a specific token of a HotToCold operation</td>
+</tr>
+<tr>
+<td>ERC20(e.g. USDT)</td>
+<td>Transfer</td>
+<td>User pay to the payment wallet, new mint operation</td>
+</tr>
+</tbody>
+</table>
+<p>For bitcoin, since there is no smart contract and event, the operation params will be 
+stored in <code>OP_RETURN</code> of any transaction sent from custodian alliance, the custodian monitor the 
+bitcoin transactions to update local operation status.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright © 2020 Conflux. All Rights Reserved.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

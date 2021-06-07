@@ -7,24 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>EIP712 Signature - Conflux DEX Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "EIP712 Signature";
-    var mkdocs_page_input_path = "matchflow\\eip712.md";
+    var mkdocs_page_input_path = "matchflow/eip712.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> Conflux DEX Documentation</a>
         <div role="search">
@@ -45,56 +47,77 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Welcome to Conflux DEX</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">MatchFlow</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ws/">WebSocket API</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">EIP712 Signature</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#why-eip712">Why EIP712</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to Conflux DEX</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ShuttleFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../shuttleflow/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../shuttleflow/json_rpc.md">JSON RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../shuttleflow/sdk.md">Conflux Crosschain SDK</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">BoomFlow</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../boomflow/">Introduction</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">MatchFlow</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ws/">WebSocket API</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../reg_user/">User Registration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Frontend Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../market_maker/">Market Maker</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">EIP712 Signature</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#general">General</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#eip712-domain">EIP712 Domain</a>
         <ul>
-        
-            <li><a class="toctree-l4" href="#eip712-domain">EIP712 Domain</a></li>
-        
-            <li><a class="toctree-l4" href="#place-order">Place Order</a></li>
-        
-            <li><a class="toctree-l4" href="#cancel-order">Cancel Order</a></li>
-        
-            <li><a class="toctree-l4" href="#withdraw">Withdraw</a></li>
-        
-            <li><a class="toctree-l4" href="#transfer">Transfer</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#boomflow-domain">Boomflow Domain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#crcl-domain">CRCL Domain</a>
+    </li>
         </ul>
-    
-
-    </ul>
-                </li>
-    </ul>
-	    </li>
-          
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#place-order">Place Order</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#schema">Schema</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cancel-order">Cancel Order</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#schema_1">Schema</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#withdraw">Withdraw</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#schema_2">Schema</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#transfer">Transfer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#schema_3">Schema</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -123,6 +146,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -130,6 +154,11 @@
               
                 <h1 id="why-eip712">Why EIP712</h1>
 <p>To avoid transaction replay attack in different Conflux chains, <strong>Conflux DEX</strong> follow the way of <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md">EIP712</a> to sign requests from users, which will be validated in <strong>MatchFlow</strong> and <strong>BoomFlow</strong>.</p>
+<h2 id="general">General</h2>
+<ul>
+<li>Values in HEX format have <code>0x</code> prefix.</li>
+<li>Some values (e.g. <code>amount</code>, <code>price</code>) are <code>BigDecimal</code> or <code>double</code> types, and need to convert to <strong>big number in drip</strong> format when interact with blockchain. Basically, the formula is: <code>big number = decimal * 10^18</code>.</li>
+</ul>
 <h2 id="eip712-domain">EIP712 Domain</h2>
 <p>Primary type: <code>EIP712Domain</code></p>
 <h3 id="boomflow-domain">Boomflow Domain</h3>
@@ -155,7 +184,7 @@
 <tr>
 <td>chainId</td>
 <td>uint256</td>
-<td>0</td>
+<td>Retrieve from Conflux RPC server</td>
 </tr>
 <tr>
 <td>verifyingContract</td>
@@ -187,7 +216,7 @@
 <tr>
 <td>chainId</td>
 <td>uint256</td>
-<td>0</td>
+<td>Retrieve from Conflux RPC server</td>
 </tr>
 <tr>
 <td>verifyingContract</td>
@@ -197,6 +226,7 @@
 </tbody>
 </table>
 <p>In the response of REST API <code>/currencies/${name}</code>, use <code>contractAddress</code> as CRCL contract address, while <code>tokenAddress</code> is the corresponding ERC777 contract address.</p>
+<p><code>chainId</code> is 0 by default, however, client should always retrieve it from Conflux RPC server. E.g. call <a href="https://developer.conflux-chain.org/docs/js-conflux-sdk/javascript_sdk#confluxprototypegetstatus">getStatus</a> to get chain ID in Javascript program.</p>
 <h2 id="place-order">Place Order</h2>
 <p>Domain: <a href="#boomflow-domain">Boomflow Domain</a></p>
 <p>Primary type: <code>Order</code></p>
@@ -375,7 +405,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../ws/" class="btn btn-neutral" title="WebSocket API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../market_maker/" class="btn btn-neutral" title="Market Maker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -389,7 +419,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -399,11 +429,11 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ws/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../market_maker/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
@@ -411,6 +441,11 @@
     <script>var base_url = '../..';</script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
